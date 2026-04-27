@@ -1,0 +1,120 @@
+name: Watch upstream Discord plugin
+
+# Detects upstream changes to external_plugins/discord/ that we haven't
+# pulled into this fork yet. Opens a tracking issue so we know to rebase.
+#
+# Why: this fork only matters because we ship axon-local edits to the
+# Discord plugin. If upstream evolves the file we patched, we want a
+# loud signal so we can rebase deliberately rather than silently drift.
+
+on:
+  schedule:
+    - cron: '0 12 * * 1'  # Mondays 12:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  drift-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Add upstream remote
+        run: git remote add upstream https://github.com/anthropics/claude-plugins-official.git
+
+      - name: Fetch upstream
+        run: git fetch upstream main
+
+      - name: Detect drift in external_plugins/discord/
+        id: drift
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=$(git merge-base HEAD upstream/main)
+          echo "merge-base: $BASE"
+          if git diff --quiet "$BASE" upstream/main -- external_plugins/discord/; then
+            echo "no upstream drift in external_plugins/discord/"
+            echo "drifted=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "drifted=true" >> "$GITHUB_OUTPUT"
+          {
+            echo 'commits<<EOF'
+            git log --oneline "$BASE"..upstream/main -- external_plugins/discord/
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+          {
+            echo 'stat<<EOF'
+            git diff --stat "$BASE" upstream/main -- external_plugins/discord/
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Open or update drift issue
+        if: steps.drift.outputs.drifted == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const commits = `${{ steps.drift.outputs.commits }}`;
+            const stat = `${{ steps.drift.outputs.stat }}`;
+            const title = 'Upstream Discord plugin drift — rebase needed';
+            const body = [
+              'Upstream `external_plugins/discord/` has commits this fork has not yet rebased onto.',
+              '',
+              '## Upstream commits since our last merge-base',
+              '```',
+              commits.trim() || '(none — rerun with workflow_dispatch to refresh)',
+              '```',
+              '',
+              '## Diff stat',
+              '```',
+              stat.trim(),
+              '```',
+              '',
+              '## How to resolve',
+              '```bash',
+              'git fetch upstream main',
+              'git checkout main',
+              'git rebase upstream/main',
+              '# resolve any conflicts in external_plugins/discord/server.ts',
+              '# bump external_plugins/discord/.claude-plugin/plugin.json version',
+              'git push --force-with-lease',
+              '```',
+              '',
+              'Then on the consumer side (axon VPS):',
+              '```bash',
+              'claude plugin marketplace update axon-fork',
+              'claude plugin update discord@axon-fork',
+              'systemctl restart axon',
+              '```',
+            ].join('\n');
+
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'upstream-drift',
+            });
+            if (existing.data.length > 0) {
+              const issue = existing.data[0];
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: 'Drift still present as of ' + new Date().toISOString() + '.\n\n' + body,
+              });
+              console.log(`Updated existing issue #${issue.number}`);
+              return;
+            }
+            const created = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ['upstream-drift'],
+            });
+            console.log(`Opened issue #${created.data.number}`);
