@@ -1,10 +1,10 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "claude-plugins-official",
-  "description": "Directory of popular Claude Code extensions including development tools, productivity plugins, and MCP integrations",
+  "name": "axon-fork",
+  "description": "Soft fork of claude-plugins-official with axon-local edits to the Discord plugin (start_thread, opt-in bot-to-bot delivery, thread-routing meta). Re-synced from upstream periodically.",
   "owner": {
-    "name": "Anthropic",
-    "email": "support@anthropic.com"
+    "name": "Sami Farhat",
+    "email": "sami.kfarhat@gmail.com"
   },
   "plugins": [
     {
