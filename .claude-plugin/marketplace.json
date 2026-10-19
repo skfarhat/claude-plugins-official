@@ -57,7 +57,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/endorlabs/ai-plugins.git",
-        "sha": "975f0ce422b1f2677681ffd085aef34ea1826b70"
+        "sha": "2de00883bd2be8b8578b46ab09baf2c8731376de"
       },
       "homepage": "https://www.endorlabs.com"
     },
@@ -67,7 +67,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/AikidoSec/aikido-claude-plugin.git",
-        "sha": "5d9c13d367218e9b43a11d4502f623ab98859225"
+        "sha": "8fdc995a44102a30ad54164e0bdd249d158c725c"
       },
       "homepage": "https://github.com/AikidoSec/aikido-claude-plugin"
     },
@@ -145,7 +145,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/atlanhq/agent-toolkit.git",
-        "sha": "acdf284da6aa98b14f8dad90a9827006d8df425c"
+        "sha": "17b7ae3b4852a24a9271a55eb339dea0b38f1f60"
       },
       "homepage": "https://docs.atlan.com/"
     },
@@ -310,7 +310,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/cap-js/mcp-server.git",
-        "sha": "4d59d7070a52761a9b8028cbe710c8d7477cbc92"
+        "sha": "348520336a4fe313c7cd993e3ca93d6bc69241ec"
       },
       "homepage": "https://cap.cloud.sap/"
     },
@@ -714,7 +714,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/firetiger-oss/claude-plugin.git",
-        "sha": "51421ce20adc7c30eb014e6847c7087ed34cb879"
+        "sha": "4a9e6dfd1d9a8a7c8e3595a916f19b5469df4173"
       },
       "homepage": "https://www.firetiger.com/"
     },
@@ -734,7 +734,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/followrabbit-ai/awesome-rabbit.git",
-        "sha": "6926154501300d348a7b50d47479648fe87985b6"
+        "sha": "4f30738ccc99d59405afc1ef6e3eafcb18873133"
       },
       "homepage": "https://subscriptions.agentic.followrabbit.ai/"
     },
@@ -846,7 +846,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/intercom/claude-plugin-external.git",
-        "sha": "52653572c47700443eb61154c4e4334a355e755e"
+        "sha": "62773a7d4b8aac31545d6888fe6479be3bc53804"
       },
       "homepage": "https://github.com/intercom/claude-plugin-external"
     },
@@ -1064,7 +1064,7 @@
         "url": "https://github.com/neondatabase/agent-skills.git",
         "path": "plugins/neon-postgres",
         "ref": "main",
-        "sha": "1438d7db4560a649d62eba99e9d5008b77ac5758"
+        "sha": "51c7d594c0568d52a15eede61cc43f9f1227607a"
       },
       "homepage": "https://github.com/neondatabase/agent-skills/tree/main/plugins/neon-postgres"
     },
@@ -1106,7 +1106,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/nvsecurity/nightvision-skills.git",
-        "sha": "7d7a3f342bbf4d02b6e012279800cf91ff0c1c97"
+        "sha": "d1b3da3caae4b9c771344d093556b9373c6f7c17"
       },
       "homepage": "https://github.com/nvsecurity/nightvision-skills"
     },
@@ -1156,7 +1156,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/PagerDuty/claude-code-plugins.git",
-        "sha": "b16c23e0d790deceaa7a6182616d0e36673f2eae"
+        "sha": "761cba75bd50fd561405c3b173ecf36084432089"
       },
       "homepage": "https://github.com/PagerDuty/claude-code-plugins"
     },
@@ -1200,7 +1200,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/planetscale/claude-plugin.git",
-        "sha": "f1066cac5bb956bbbb05918f5b07fe0e873d44ea"
+        "sha": "95c80f9f391be9b1b6172bf82d4191e1ec11b637"
       },
       "homepage": "https://planetscale.com/"
     },
@@ -1291,7 +1291,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Accoil/product-tracking-skills.git",
-        "sha": "341f8cf47d8b5dda550222152377c50aee34c723"
+        "sha": "91ae6a6267804e83a792b477f348d00c51d1a6cf"
       },
       "homepage": "https://www.accoil.com/product-tracking"
     },
@@ -1377,7 +1377,7 @@
         "url": "https://github.com/railwayapp/railway-skills.git",
         "path": "plugins/railway",
         "ref": "main",
-        "sha": "eaa89d8f594412b0b837b6531241e7d166e12202"
+        "sha": "526e95524e964ed326689cbac4464d97a58ab81c"
       },
       "homepage": "https://docs.railway.com/ai/claude-code-plugin"
     },
@@ -1399,7 +1399,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/RevenueCat/rc-claude-code-plugin.git",
-        "sha": "af7cb77996aee4e7e3c109c5afec81f716139032"
+        "sha": "136d2df6b41ac594340d15afa33e0b58d85d545b"
       },
       "homepage": "https://www.revenuecat.com"
     },
@@ -1420,7 +1420,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/RevenueCat/rc-claude-code-plugin.git",
-        "sha": "af7cb77996aee4e7e3c109c5afec81f716139032"
+        "sha": "136d2df6b41ac594340d15afa33e0b58d85d545b"
       },
       "homepage": "https://www.revenuecat.com"
     },
@@ -1500,7 +1500,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/searchfit/searchfit-seo.git",
-        "sha": "ced1a99a9fadfc10aa573a05829fc1bd357d4e4c"
+        "sha": "c324a2e87c4dd84fe6bd6d55e45272acdd090afd"
       },
       "homepage": "https://searchfit.ai"
     },
@@ -1634,7 +1634,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/sourcegraph-community/sourcegraph-claudecode-plugin.git",
-        "sha": "332ee0ca9a409ccd791abee43c7abf2606469017"
+        "sha": "674a05e2e28677fc3fdce7491063459455ded573"
       },
       "homepage": "https://sourcegraph.com"
     },
@@ -1792,7 +1792,7 @@
         "url": "https://github.com/UI5/plugins-claude.git",
         "path": "plugins/ui5",
         "ref": "main",
-        "sha": "cec940abd4b7b6866de8e7e4522f3dba0449379d"
+        "sha": "9450c3ab6b69313674517e3c6650500413eb647d"
       },
       "homepage": "https://github.com/UI5/plugins-claude"
     },
@@ -1805,7 +1805,7 @@
         "url": "https://github.com/UI5/plugins-claude.git",
         "path": "plugins/ui5-typescript-conversion",
         "ref": "main",
-        "sha": "cec940abd4b7b6866de8e7e4522f3dba0449379d"
+        "sha": "9450c3ab6b69313674517e3c6650500413eb647d"
       },
       "homepage": "https://github.com/UI5/plugins-claude"
     },
@@ -1867,7 +1867,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/windsor-ai/claude-windsor-ai-plugin.git",
-        "sha": "248a6994b15b410cc025b105bb4ed5558e9b1af9"
+        "sha": "c1d90dabde3422464ae6b81a944f0db92fe3eb5d"
       },
       "homepage": "https://windsor.ai"
     },
